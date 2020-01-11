@@ -1,0 +1,35 @@
+<br><br />
+<h2 class="text-center">Agregar</h2>
+<div class="container">
+  <div class="col">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Organizacion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>
+          <input type="String" [(ngModel)]="stakeholder.nombre" required>
+        </td>
+        <td>
+          <input type="String" [(ngModel)]="stakeholder.tipo" required>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="stakeholderOrganizacion"></label>
+            <select class="custom-select" name="stakeholderOrganizacion" id="stakeholderOrganizacion"
+              [(ngModel)]="stakeholder.organizacion.id">
+              <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id">{{organizacion.nombre}}
+              </option>
+            </select>
+          </div>
+        </td>
+      </tbody>
+    </table>
+  </div>
+
+  <td><button class="btn btn-success" (click)="createStakeholder()">Ingresar los valores  </button></td>
+</div>

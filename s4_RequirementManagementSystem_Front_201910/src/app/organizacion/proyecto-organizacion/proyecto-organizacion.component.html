@@ -1,0 +1,32 @@
+<h2 class="text-center">Agregar</h2>
+<div class="container">
+  <div class="col">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id de la Organizacion</th>
+          <th>Id del Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>
+          <div class="form-group">
+            <label for="organizacionId"></label>
+            <select class="custom-select" name="organizacionId" id="organizacionId" [(ngModel)]="organizacion.id">
+                <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id" >(ID, Nombre): ({{organizacion.id}}, {{organizacion.nombre}}) </option>
+            </select>
+        </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="proyectoId"></label>
+            <select class="custom-select" name="proyectoId" id="proyectoId" [(ngModel)]="proyecto.id">
+                <option *ngFor="let proyecto of proyectos" [value]="proyecto.id" >(ID, Nombre): ({{proyecto.id}}, {{proyecto.nombre}}) </option>
+            </select>
+        </div>
+        </td>
+      </tbody>
+    </table>
+  </div>
+  <td><button class="btn btn-success" (click)="agegarProyectoOrganizacion()">Agregar</button></td>
+</div>

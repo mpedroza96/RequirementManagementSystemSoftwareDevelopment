@@ -1,0 +1,49 @@
+<div class="container">
+        <div class="header">
+          <span class="login" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log In</span> or 
+          <span class="signup" >Sign Up</span>
+        </div> <!-- end header -->
+        
+        <hr />
+        
+        <form name="signUpForm" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+          <input type="text" name="usuario" id="username" placeholder="Usuario" [(ngModel)]="usuario.usuario" required />
+          <input input name="contrasena" type="password" name="password" id="password" [(ngModel)]="usuario.contrasena" required  placeholder="Contraseña"/>
+          <select class="select"  name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
+                    <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
+                </select>
+          <input type="submit" [routerLink]="['/start']" routerLinkActive="router-link-active" value="Crear cuenta" />
+        </form>
+      
+  </div>
+
+
+
+<!--
+<div class="row">
+    <div class="col-6 offset-3">
+        <br>
+        <h2 class="text-center">Sign up</h2>
+        <br>
+        <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="usuario"><b>Usuario</b></label>
+                <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="usuario.usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena"><b>Contraseña</b></label>
+                <input type="text" name="contrasena" class="form-control" id="contrasena" [(ngModel)]="usuario.contrasena" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo"><b>Tipo</b></label>
+                <select class="custom-select" name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
+                    <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
+                </select>
+            </div>
+            <div class="justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary" routerLink="/start"> Registrarse</button>
+            </div>
+        </form>
+    </div>
+</div>
+--->
